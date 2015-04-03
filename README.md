@@ -55,7 +55,7 @@ Or both!
 
 This will clone the dummy repo and list the files in it.
 
-    docker run -e RABBIT_HOST=$RABBIT_HOST dockerbuilder/builddebug python submit_build_request.py --clone-url=git:foo --name=john --revision=master --timeout=30 --step '{"args":["ls"], "env":{"FOO":"BAR"}}'
+    docker run -e RABBIT_HOST=$RABBIT_HOST dockerbuilder/builddebug python submit_build_request.py --clone-url=https://github.com/iffy/dockerbuilder.git --name=john --revision=master --timeout=30 --step '{"args":["ls"], "env":{"FOO":"BAR"}}'
 
 
 
