@@ -1,14 +1,15 @@
+SERVER="dockerbuilder"
 
-.PHONY: dockerbuilder/builder dockerbuilder/builddebug
+.PHONY: $(SERVER)/builder $(SERVER)/builddebug
 
 
-all: dockerbuilder/builder dockerbuilder/builddebug
+all: $(SERVER)/builder $(SERVER)/builddebug
 
-dockerbuilder/builder:
-	docker build -f Dockerfile.builder -t dockerbuilder/builder .
-	docker push dockerbuilder/builder
+$(SERVER)/builder:
+	docker build -f Dockerfile.builder -t $(SERVER)/builder .
+	docker push $(SERVER)/builder
 
-dockerbuilder/builddebug:
-	docker build -f Dockerfile.builddebug -t dockerbuilder/builddebug .
-	docker push dockerbuilder/builddebug
+$(SERVER)/builddebug:
+	docker build -f Dockerfile.builddebug -t $(SERVER)/builddebug .
+	docker push $(SERVER)/builddebug
 
